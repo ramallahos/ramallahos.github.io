@@ -57,7 +57,7 @@ jobs:
           hugo \
             --minify --gc --cleanDestinationDir \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
-      - name: Deploy to Different Branch
+      - name: Deploy toPublic Branch
         run: |
           git config --global user.name 'Safwan Nayeem Yousuf'
           git config --global user.email 'SafwanNayeemYousuf@email.com'
