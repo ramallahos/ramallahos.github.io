@@ -70,7 +70,7 @@ jobs:
           git commit -m 'Hugo build update'
           git push origin public -f
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.Hugo }}
           
   # Deployment job
   deploy:
