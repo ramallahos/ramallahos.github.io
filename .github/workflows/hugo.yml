@@ -57,7 +57,11 @@ jobs:
           hugo \
             --minify --gc --cleanDestinationDir \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
-      - name: Deploy toPublic Branch
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./public
+      - name: Deploy to Public Branch
         run: |
           git config --global user.name 'Safwan Nayeem Yousuf'
           git config --global user.email 'SafwanNayeemYousuf@email.com'
@@ -66,11 +70,7 @@ jobs:
           git add .
           git commit -m 'Hugo build update'
           git push origin public -f
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: ./public
-
+          
   # Deployment job
   deploy:
     environment:
