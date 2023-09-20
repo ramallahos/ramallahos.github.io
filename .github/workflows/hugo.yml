@@ -63,8 +63,6 @@ jobs:
           path: ./public
       - name: Deploy to Public Branch
         run: |
-          git config --global user.name 'Safwan Nayeem Yousuf'
-          git config --global user.email 'SafwanNayeemYousuf@email.com'
           git checkout -b public
           git add -A
           git commit -m 'Hugo build update'
