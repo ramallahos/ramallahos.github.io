@@ -67,9 +67,9 @@ jobs:
           git config --global user.email 'SafwanNayeemYousuf@email.com'
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
           git checkout -b public
-          git add .
+          git add -A
           git commit -m 'Hugo build update'
-          git push origin public -f
+          git push origin public
           
   # Deployment job
   deploy:
