@@ -61,16 +61,6 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           path: ./public
-      - name: Deploy to Public Branch
-        run: |
-          git config --global user.name 'Safwan Nayeem Yousuf'
-          git config --global user.email 'safwannayeemyousuf@email.com'
-          git checkout -b public
-          git add -A
-          git commit -m 'Hugo build update'
-          git push origin public -f
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
           
   # Deployment job
   deploy:
