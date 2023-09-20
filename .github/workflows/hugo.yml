@@ -69,6 +69,8 @@ jobs:
           git add -A
           git commit -m 'Hugo build update'
           git push origin public -f
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
           
   # Deployment job
   deploy:
