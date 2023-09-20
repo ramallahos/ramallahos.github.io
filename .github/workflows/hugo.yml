@@ -68,7 +68,9 @@ jobs:
           git checkout -b public
           git add -A
           git commit -m 'Hugo build update'
-          git push origin public
+          git push origin public -f
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
   # Deployment job
   deploy:
